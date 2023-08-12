@@ -30,7 +30,7 @@ const DownloadButton = () => {
 
         // Convert the captured canvas to an image and add it to the PDF
         const screenshotData = canvas.toDataURL('image/png', 1.0);
-        if (screenshotData.trim() == 'data:,') return;
+        if (screenshotData.trim() === 'data:,') return;
         // console.log(screenshotData);
         pdf.deletePage(1);
         pdf.addPage(imgWidth, imgHeight);
@@ -68,7 +68,7 @@ const DownloadButton = () => {
         <button className="button" onClick={handleCaptureScreenshot}><FaDownload/></button>
         </div>
         <div className="popup" ref={popupRef} id="popup">
-          <img src={imagetwo} />
+          <img src={imagetwo} alt="imageTwo" />
           <h2>Help</h2>
           <p>Step 1: Select a region from the dropdown menu above</p>
           <p>Step 2: Please type in the indicator you are looking for, followed by a '/' and the area you require</p>
